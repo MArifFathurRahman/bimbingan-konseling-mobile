@@ -1,17 +1,39 @@
-# aplikasi_bk
+# BINUSA SafeSpace - Aplikasi Bimbingan Konseling Mobile
 
-A new Flutter project.
+Aplikasi mobile berbasis Flutter untuk sistem bimbingan konseling sekolah. Didesain untuk memudahkan komunikasi dan monitoring antara siswa, wali kelas, dan guru BK (Bimbingan Konseling).
 
-## Getting Started
+## Fitur Utama
 
-This project is a starting point for a Flutter application.
+- **Multi-role**: Login sebagai Siswa, Wali Kelas, atau Admin BK
+- **Konseling**: Siswa dapat mengajukan permohonan konseling dan chat dengan guru BK
+- **Pelanggaran & Poin**: Input dan monitoring poin pelanggaran siswa
+- **Surat Panggilan**: Pembuatan dan pengelolaan surat panggilan orang tua
+- **Monitoring**: Wali kelas dapat memantau perkembangan siswa
+- **Notifikasi**: Notifikasi real-time untuk pengajuan konseling dan pelanggaran
+- **Laporan PDF**: Generate laporan dalam format PDF
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- **Framework**: Flutter (Dart)
+- **Backend**: Firebase (Auth, Firestore, Storage, Functions)
+- **Platform**: Android, iOS, Web, Windows, Linux, macOS
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Cara Menjalankan
+
+```bash
+flutter pub get
+flutter run
+```
+
+## Struktur Proyek
+
+```
+lib/
+├── core/          # Tema, konstanta, utilitas
+├── models/        # Model data
+├── providers/     # State management
+├── routes/        # Routing
+├── screens/       # Halaman (admin, auth, student, teacher)
+├── services/      # Layanan Firebase & lainnya
+└── widgets/       # Widget reusable
+```
