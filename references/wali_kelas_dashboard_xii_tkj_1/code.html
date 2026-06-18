@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#f39461",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "on-tertiary-fixed-variant": "#773205",
+                    "on-primary-fixed": "#00164e",
+                    "secondary-fixed-dim": "#b8c3ff",
+                    "on-background": "#191c1e",
+                    "error": "#ba1a1a",
+                    "on-surface": "#191c1e",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-highest": "#e0e3e5",
+                    "outline-variant": "#c5c5d3",
+                    "outline": "#757682",
+                    "surface-variant": "#e0e3e5",
+                    "on-secondary-container": "#283b88",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#98a9fd",
+                    "on-surface-variant": "#444651",
+                    "tertiary-container": "#6e2c00",
+                    "on-tertiary-fixed": "#341100",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#4059aa",
+                    "tertiary": "#4b1c00",
+                    "surface-bright": "#f7f9fb",
+                    "primary": "#00236f",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#ffdbcb",
+                    "secondary-fixed": "#dde1ff",
+                    "on-secondary-fixed": "#001355",
+                    "secondary": "#4759a7",
+                    "surface-container": "#eceef0",
+                    "surface": "#f7f9fb",
+                    "primary-fixed": "#dce1ff",
+                    "inverse-primary": "#b6c4ff",
+                    "on-primary-fixed-variant": "#264191",
+                    "background": "#f7f9fb",
+                    "tertiary-fixed-dim": "#ffb691",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-primary-container": "#90a8ff",
+                    "inverse-surface": "#2d3133",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "primary-container": "#1e3a8a",
+                    "on-secondary-fixed-variant": "#2e408d",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "card-padding": "20px",
+                    "stack-sm": "8px",
+                    "stack-lg": "24px",
+                    "margin-mobile": "20px",
+                    "gutter": "16px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "label-md": ["11px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #f7f9fb;
+        color: #191c1e;
+        font-family: 'Inter', sans-serif;
+      }
+      .custom-shadow {
+        box-shadow: 0 4px 20px rgba(30, 58, 138, 0.08);
+      }
+      .brand-gradient {
+        background: linear-gradient(135deg, #00236f 0%, #1e3a8a 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 w-full h-16 flex justify-between items-center px-margin-mobile bg-surface/80 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<span class="font-title-lg text-title-lg font-bold text-primary">SafeSpace</span>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest border-2 border-primary/10">
+<img alt="User" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a high school homeroom teacher in a well-lit office environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiXBkH7j9BrhYioljHJwmAXuOQeHUeT4kBw0t2EbzFo-6bDvJRsLErtVsVBkIYL3unrIUN8S9Lh8oyX3FB4QTdlxHTxCOkBZKgOOdyG3L_oRmsu5hFewflNKRgyjYnBrtQwxgB9mFLq-PsMuSg3r33vUVi25iwSHXx6KCJ3a8j_Upj3CVSiaUQvUnf5Q-XJbbnCO1ThCFDSFSWOxuNyHAUR026JiXn8E4sfwN8cOiIwiJzJAxWm580JNILDQzEu6UM1G2FBUZ73dI"/>
+</div>
+</header>
+<main class="pt-20 pb-24 px-margin-mobile max-w-2xl mx-auto">
+<!-- Page Title -->
+<section class="mb-stack-lg">
+<h1 class="font-headline-md text-headline-md text-primary mb-1">Wali Kelas XII TKJ 1</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Daily student wellbeing status overview</p>
+</section>
+<!-- Search & Filter Bar -->
+<div class="flex gap-stack-sm mb-stack-lg">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant bg-surface-container-lowest focus:outline-none focus:border-primary transition-all font-body-md" placeholder="Search student name..." type="text"/>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl border border-outline-variant bg-surface-container-lowest text-primary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+<!-- Dashboard Stats Bento -->
+<div class="grid grid-cols-2 gap-stack-md mb-stack-lg">
+<div class="bg-surface-container-lowest p-card-padding rounded-[24px] custom-shadow border-l-4 border-[#22c55e]">
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider mb-1">Total Students</p>
+<h2 class="font-headline-lg text-headline-lg text-primary">32</h2>
+</div>
+<div class="bg-surface-container-lowest p-card-padding rounded-[24px] custom-shadow border-l-4 border-error">
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider mb-1">Alerts</p>
+<h2 class="font-headline-lg text-error">4</h2>
+</div>
+</div>
+<!-- Student List Header -->
+<div class="flex justify-between items-center mb-stack-md">
+<h3 class="font-title-lg text-title-lg text-on-surface">Monitoring Records</h3>
+<span class="font-label-lg text-label-lg text-secondary">Updated 5m ago</span>
+</div>
+<!-- Student Cards -->
+<div class="space-y-stack-md">
+<!-- Card 1: 25+ points (Red) -->
+<div class="bg-surface-container-lowest p-card-padding rounded-[24px] custom-shadow flex items-center justify-between group hover:border-primary transition-all duration-300">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-error-container flex items-center justify-center text-on-error-container font-bold font-title-lg">
+                        AS
+                    </div>
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface">Aditya Saputra</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">XII TKJ 1</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="px-3 py-1 rounded-full bg-error/10 text-error font-bold text-body-md border border-error/20">
+                        35 pts
+                    </div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 2: 0-10 points (Green) -->
+<div class="bg-surface-container-lowest p-card-padding rounded-[24px] custom-shadow flex items-center justify-between group hover:border-primary transition-all duration-300">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-primary-fixed flex items-center justify-center text-primary font-bold font-title-lg">
+                        BW
+                    </div>
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface">Bambang Wijaya</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">XII TKJ 1</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="px-3 py-1 rounded-full bg-[#22c55e]/10 text-[#22c55e] font-bold text-body-md border border-[#22c55e]/20">
+                        5 pts
+                    </div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 3: 11-25 points (Yellow) -->
+<div class="bg-surface-container-lowest p-card-padding rounded-[24px] custom-shadow flex items-center justify-between group hover:border-primary transition-all duration-300">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-error-container flex items-center justify-center text-on-error-container font-bold font-title-lg">
+                        CP
+                    </div>
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface">Citra Putri</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">XII TKJ 1</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="px-3 py-1 rounded-full bg-[#eab308]/10 text-[#eab308] font-bold text-body-md border border-[#eab308]/20">
+                        18 pts
+                    </div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 4: 0-10 points (Green) -->
+<div class="bg-surface-container-lowest p-card-padding rounded-[24px] custom-shadow flex items-center justify-between group hover:border-primary transition-all duration-300">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-primary-fixed flex items-center justify-center text-primary font-bold font-title-lg">
+                        DF
+                    </div>
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface">Deni Firmansyah</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">XII TKJ 1</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="px-3 py-1 rounded-full bg-[#22c55e]/10 text-[#22c55e] font-bold text-body-md border border-[#22c55e]/20">
+                        2 pts
+                    </div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 5: 0-10 points (Green) -->
+<div class="bg-surface-container-lowest p-card-padding rounded-[24px] custom-shadow flex items-center justify-between group hover:border-primary transition-all duration-300">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-primary-fixed flex items-center justify-center text-primary font-bold font-title-lg">
+                        EK
+                    </div>
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface">Eka Kurnia</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">XII TKJ 1</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="px-3 py-1 rounded-full bg-[#22c55e]/10 text-[#22c55e] font-bold text-body-md border border-[#22c55e]/20">
+                        0 pts
+                    </div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center pt-3 pb-6 px-4 bg-surface z-50 rounded-t-3xl shadow-[0_-4px_20px_rgba(30,58,138,0.08)]">
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-5 py-1">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-md text-label-md">Counseling</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</div>
+</nav>
+<!-- FAB for quick action -->
+<button class="fixed bottom-24 right-6 w-14 h-14 brand-gradient text-white rounded-full flex items-center justify-center custom-shadow active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined" data-icon="add" style="font-variation-settings: 'wght' 600;">add</span>
+</button>
+</body></html>

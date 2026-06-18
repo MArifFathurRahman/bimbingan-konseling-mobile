@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-container": "#f39461",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#d8dadc",
+            "primary-fixed-dim": "#b6c4ff",
+            "on-tertiary-fixed-variant": "#773205",
+            "on-primary-fixed": "#00164e",
+            "secondary-fixed-dim": "#b8c3ff",
+            "on-background": "#191c1e",
+            "error": "#ba1a1a",
+            "on-surface": "#191c1e",
+            "surface-container-low": "#f2f4f6",
+            "surface-container-highest": "#e0e3e5",
+            "outline-variant": "#c5c5d3",
+            "outline": "#757682",
+            "surface-variant": "#e0e3e5",
+            "on-secondary-container": "#283b88",
+            "on-primary": "#ffffff",
+            "secondary-container": "#98a9fd",
+            "on-surface-variant": "#444651",
+            "tertiary-container": "#6e2c00",
+            "on-tertiary-fixed": "#341100",
+            "error-container": "#ffdad6",
+            "surface-tint": "#4059aa",
+            "tertiary": "#4b1c00",
+            "surface-bright": "#f7f9fb",
+            "primary": "#00236f",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#ffdbcb",
+            "secondary-fixed": "#dde1ff",
+            "on-secondary-fixed": "#001355",
+            "secondary": "#4759a7",
+            "surface-container": "#eceef0",
+            "surface": "#f7f9fb",
+            "primary-fixed": "#dce1ff",
+            "inverse-primary": "#b6c4ff",
+            "on-primary-fixed-variant": "#264191",
+            "background": "#f7f9fb",
+            "tertiary-fixed-dim": "#ffb691",
+            "inverse-on-surface": "#eff1f3",
+            "on-primary-container": "#90a8ff",
+            "inverse-surface": "#2d3133",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e6e8ea",
+            "primary-container": "#1e3a8a",
+            "on-secondary-fixed-variant": "#2e408d",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "card-padding": "20px",
+            "stack-sm": "8px",
+            "stack-lg": "24px",
+            "margin-mobile": "20px",
+            "gutter": "16px",
+            "stack-md": "16px"
+          },
+          "fontFamily": {
+            "title-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "label-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-lg": ["Inter"]
+          },
+          "fontSize": {
+            "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "label-md": ["11px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-shadow {
+      box-shadow: 0 4px 20px rgba(30, 58, 138, 0.08);
+    }
+    body {
+      -webkit-tap-highlight-color: transparent;
+      scroll-behavior: smooth;
+    }
+    .brand-gradient {
+      background: linear-gradient(135deg, #00236f 0%, #1e3a8a 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar: Task-Focused Suppression Rule Applied (Close action implies temporary departure) -->
+<!-- Manual TopAppBar for Submission Context -->
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md px-margin-mobile h-16 flex items-center justify-between">
+<div class="flex items-center gap-stack-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors active:scale-90">
+<span class="material-symbols-outlined text-on-surface">close</span>
+</button>
+<h1 class="font-title-lg text-title-lg text-on-surface">Submit New Record</h1>
+</div>
+<div class="flex items-center gap-stack-sm">
+<span class="text-label-lg font-label-lg text-primary bg-primary-fixed px-3 py-1 rounded-full">DRAFT</span>
+</div>
+</header>
+<main class="flex-grow px-margin-mobile py-stack-lg max-w-2xl mx-auto w-full">
+<!-- Hero/Instruction Card -->
+<div class="mb-stack-lg p-card-padding bg-surface-container-lowest rounded-[24px] custom-shadow border border-outline-variant/30">
+<div class="flex items-start gap-4">
+<div class="bg-primary-container p-3 rounded-xl">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">Incident Report</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Your submission helps us maintain a safe and supportive learning environment. Please provide as much detail as possible.</p>
+</div>
+</div>
+</div>
+<!-- Submission Form -->
+<form class="space-y-stack-lg">
+<!-- Subject Field -->
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant px-1" for="subject">Subject</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border border-outline rounded-xl px-4 py-3.5 text-body-lg font-body-lg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline-variant outline-none" id="subject" placeholder="E.g., Disciplinary Incident - Hallway 4" type="text"/>
+</div>
+</div>
+<!-- Detailed Information Field -->
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant px-1" for="details">Detailed Information</label>
+<div class="relative">
+<textarea class="w-full bg-surface-container-lowest border border-outline rounded-[24px] p-card-padding text-body-md font-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline-variant outline-none resize-none" id="details" placeholder="Describe the situation in detail, including dates, times, and individuals involved if known..." rows="8"></textarea>
+</div>
+</div>
+<!-- Image/Evidence Attachment Area -->
+<div class="p-card-padding border-2 border-dashed border-outline-variant rounded-[24px] bg-surface-container-low/50 flex flex-col items-center justify-center gap-3 group cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-surface-variant">add_a_photo</span>
+</div>
+<div class="text-center">
+<p class="font-label-lg text-label-lg text-on-surface">Attach Evidence</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs">Upload photos or documents (Max 10MB)</p>
+</div>
+</div>
+<!-- Privacy Toggle Card -->
+<div class="flex items-center justify-between p-card-padding bg-surface-container-lowest rounded-[24px] custom-shadow border border-outline-variant/30">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-tertiary-fixed text-on-tertiary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div>
+<p class="font-title-lg text-title-lg text-on-surface">Submit as Private</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Only administrators can view this</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-8 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Spacer for bottom fixed button -->
+<div class="h-24"></div>
+</form>
+</main>
+<!-- Sticky Submit Footer -->
+<footer class="fixed bottom-0 left-0 w-full p-margin-mobile bg-surface/80 backdrop-blur-xl border-t border-outline-variant/10 flex flex-col gap-stack-md safe-area-bottom">
+<div class="max-w-2xl mx-auto w-full">
+<button class="w-full brand-gradient py-4 rounded-full text-on-primary font-title-lg text-title-lg custom-shadow active:scale-[0.98] transition-transform flex items-center justify-center gap-2">
+<span>Submit</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+<p class="text-center font-label-md text-label-md text-on-surface-variant mt-stack-sm">
+        By submitting, you agree to the <a class="text-primary font-semibold underline" href="#">Code of Conduct</a>.
+      </p>
+</div>
+</footer>
+<!-- Background Decorative Element -->
+<div class="fixed -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<div class="fixed top-1/2 -left-32 w-80 h-80 bg-secondary/5 rounded-full blur-3xl -z-10"></div>
+</body></html>

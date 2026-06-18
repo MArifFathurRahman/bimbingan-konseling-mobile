@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Input Poin Siswa - EduGuard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#90a8ff",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "secondary-container": "#98a9fd",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#773205",
+                      "inverse-on-surface": "#eff1f3",
+                      "primary-container": "#1e3a8a",
+                      "on-tertiary-container": "#f39461",
+                      "on-tertiary": "#ffffff",
+                      "background": "#f7f9fb",
+                      "tertiary-fixed-dim": "#ffb691",
+                      "surface-container-high": "#e6e8ea",
+                      "on-primary-fixed-variant": "#264191",
+                      "surface-bright": "#f7f9fb",
+                      "on-primary": "#ffffff",
+                      "primary": "#00236f",
+                      "on-background": "#191c1e",
+                      "secondary": "#4759a7",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "surface-container": "#eceef0",
+                      "on-surface-variant": "#444651",
+                      "on-secondary-container": "#283b88",
+                      "tertiary-fixed": "#ffdbcb",
+                      "surface-variant": "#e0e3e5",
+                      "tertiary": "#4b1c00",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-tertiary-fixed": "#341100",
+                      "on-secondary-fixed-variant": "#2e408d",
+                      "secondary-fixed-dim": "#b8c3ff",
+                      "surface-container-low": "#f2f4f6",
+                      "surface": "#f7f9fb",
+                      "primary-fixed": "#dce1ff",
+                      "outline-variant": "#c5c5d3",
+                      "on-surface": "#191c1e",
+                      "surface-tint": "#4059aa",
+                      "outline": "#757682",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#2d3133",
+                      "on-primary-fixed": "#00164e",
+                      "inverse-primary": "#b6c4ff",
+                      "tertiary-container": "#6e2c00",
+                      "surface-dim": "#d8dadc",
+                      "secondary-fixed": "#dde1ff",
+                      "on-secondary-fixed": "#001355"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "16px",
+                      "stack-sm": "8px",
+                      "card-padding": "20px",
+                      "margin-mobile": "20px",
+                      "gutter": "16px",
+                      "stack-lg": "24px"
+              },
+              "fontFamily": {
+                      "label-md": ["Inter"],
+                      "title-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-md": ["11px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface shadow-[0_4px_20px_rgba(30,58,138,0.08)] flex justify-between items-center px-margin-mobile py-4 w-full sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">EduGuard</h1>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</header>
+<main class="px-margin-mobile pt-stack-lg flex flex-col gap-stack-lg">
+<!-- Back Navigation & Title -->
+<div class="flex items-center gap-2">
+<button class="p-2 -ml-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h2 class="font-headline-md text-headline-md font-bold text-on-background">Input Poin Siswa</h2>
+</div>
+<!-- Student Profile Card -->
+<section class="bg-surface-container-lowest rounded-[24px] p-card-padding shadow-[0_4px_20px_rgba(30,58,138,0.08)] flex items-center gap-4">
+<img alt="Profile Budi Santoso" class="w-16 h-16 rounded-full object-cover border-2 border-surface-variant" data-alt="A professional studio portrait of a high school male student wearing a neat white and grey Indonesian school uniform. He has a friendly and calm expression, looking directly at the camera. The background is a soft, out-of-focus modern educational environment with bright, natural lighting. The overall mood is academic, disciplined, and trustworthy, aligning with a corporate educational UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHUs-8A-Fp_r-zwc-irjlbKJB7qANFBoIuaPjnlXwIwMxp39BMmljzWqR6kIPemNl1W0BengrRau0TcGZwi0HJEdDOe93mlvocJabrzEM8HoxQNje8gprhE0lY1TvIp7WQOxkBftRWUiHKfC2I8GJ_F26xpxWRUlbeNFGwhAaKj9t0PFta6l7ctATsNmt4rVSF7zFZmY5hkRuRpIVzgWIjT9Zdox0CJo-niXh78ps1ig2P0zRiRWq7_RLAeb6PnQ7BK6oJELTH3xk"/>
+<div>
+<h3 class="font-title-lg text-title-lg text-primary">Budi Santoso</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">XII RPL 1</p>
+<div class="mt-2 flex items-center gap-1">
+<span class="font-label-lg text-label-lg px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container">Poin Aktif: 15</span>
+</div>
+</div>
+</section>
+<!-- Form Section -->
+<section class="flex flex-col gap-stack-md">
+<!-- Violation Category Selection -->
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-lg text-label-lg text-outline uppercase tracking-wider ml-1">Kategori Pelanggaran</label>
+<div class="grid grid-cols-1 gap-3">
+<!-- Custom Select Layout -->
+<button class="bg-surface-container-lowest rounded-[24px] p-card-padding shadow-[0_4px_20px_rgba(30,58,138,0.08)] border-2 border-primary flex items-center justify-between text-left group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-headline-md">
+                                B
+                            </div>
+<div>
+<h4 class="font-title-lg text-title-lg text-primary">Keterlambatan</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Terlambat masuk sekolah &gt; 15 menit</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-error font-bold">10</span>
+<p class="font-label-md text-label-md text-outline">Poin</p>
+</div>
+</button>
+<div class="flex flex-wrap gap-2">
+<!-- Chip-style quick selection for other categories -->
+<div class="px-4 py-3 bg-surface-container-low rounded-full font-label-lg text-label-lg text-on-surface-variant border border-outline-variant hover:border-primary transition-colors cursor-pointer">A: Atribut</div>
+<div class="px-4 py-3 bg-surface-container-low rounded-full font-label-lg text-label-lg text-on-surface-variant border border-outline-variant hover:border-primary transition-colors cursor-pointer">C: Kehadiran</div>
+<div class="px-4 py-3 bg-surface-container-low rounded-full font-label-lg text-label-lg text-on-surface-variant border border-outline-variant hover:border-primary transition-colors cursor-pointer">D: Kerapihan</div>
+<div class="px-4 py-3 bg-surface-container-low rounded-full font-label-lg text-label-lg text-on-surface-variant border border-outline-variant hover:border-primary transition-colors cursor-pointer">E: Perilaku</div>
+<div class="px-4 py-3 bg-surface-container-low rounded-full font-label-lg text-label-lg text-on-surface-variant border border-outline-variant hover:border-primary transition-colors cursor-pointer">... Lihat Semua (K)</div>
+</div>
+</div>
+</div>
+<!-- Notes Field -->
+<div class="flex flex-col gap-stack-sm mt-2">
+<label class="font-label-lg text-label-lg text-outline uppercase tracking-wider ml-1" for="notes">Detail Kejadian (Opsional)</label>
+<div class="relative">
+<textarea class="w-full bg-surface-container-lowest rounded-[24px] p-card-padding border border-outline-variant focus:border-primary focus:ring-0 shadow-[0_4px_20px_rgba(30,58,138,0.08)] font-body-md text-body-md resize-none transition-all placeholder:text-outline" id="notes" placeholder="Berikan deskripsi singkat mengenai kejadian..." rows="4"></textarea>
+<div class="absolute bottom-4 right-4 text-outline font-label-md text-label-md">0/200</div>
+</div>
+</div>
+<!-- Date Picker Simulation -->
+<div class="flex flex-col gap-stack-sm mt-2">
+<label class="font-label-lg text-label-lg text-outline uppercase tracking-wider ml-1">Tanggal Kejadian</label>
+<div class="bg-surface-container-lowest rounded-[24px] p-4 border border-outline-variant flex items-center justify-between shadow-[0_4px_20px_rgba(30,58,138,0.08)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-md text-body-md text-on-background">24 Mei 2024</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Submit Action -->
+<div class="mt-stack-lg">
+<button class="w-full bg-gradient-to-r from-primary to-secondary text-on-primary py-4 rounded-full font-title-lg text-title-lg shadow-lg active:scale-95 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="save">save</span>
+                Simpan Poin
+            </button>
+<p class="text-center font-label-md text-label-md text-outline mt-4 italic">Perubahan ini akan dicatat secara permanen di buku disiplin digital.</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-surface-container-lowest shadow-[0_-4px_20px_rgba(30,58,138,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-1 hover:bg-surface-container-high transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-lg text-label-lg">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-6 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-label-lg text-label-lg">Counseling</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-1 hover:bg-surface-container-high transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_late">assignment_late</span>
+<span class="font-label-lg text-label-lg">Reports</span>
+</a>
+</nav>
+</body></html>

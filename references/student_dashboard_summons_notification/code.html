@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Binusa SafeSpace - Student Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#f39461",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "on-tertiary-fixed-variant": "#773205",
+                    "on-primary-fixed": "#00164e",
+                    "secondary-fixed-dim": "#b8c3ff",
+                    "on-background": "#191c1e",
+                    "error": "#ba1a1a",
+                    "on-surface": "#191c1e",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-highest": "#e0e3e5",
+                    "outline-variant": "#c5c5d3",
+                    "outline": "#757682",
+                    "surface-variant": "#e0e3e5",
+                    "on-secondary-container": "#283b88",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#98a9fd",
+                    "on-surface-variant": "#444651",
+                    "tertiary-container": "#6e2c00",
+                    "on-tertiary-fixed": "#341100",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#4059aa",
+                    "tertiary": "#4b1c00",
+                    "surface-bright": "#f7f9fb",
+                    "primary": "#00236f",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#ffdbcb",
+                    "secondary-fixed": "#dde1ff",
+                    "on-secondary-fixed": "#001355",
+                    "secondary": "#4759a7",
+                    "surface-container": "#eceef0",
+                    "surface": "#f7f9fb",
+                    "primary-fixed": "#dce1ff",
+                    "inverse-primary": "#b6c4ff",
+                    "on-primary-fixed-variant": "#264191",
+                    "background": "#f7f9fb",
+                    "tertiary-fixed-dim": "#ffb691",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-primary-container": "#90a8ff",
+                    "inverse-surface": "#2d3133",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "primary-container": "#1e3a8a",
+                    "on-secondary-fixed-variant": "#2e408d",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "card-padding": "20px",
+                    "stack-sm": "8px",
+                    "stack-lg": "24px",
+                    "margin-mobile": "20px",
+                    "gutter": "16px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "label-md": ["11px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-brand-gradient {
+            background: linear-gradient(135deg, #00236f 0%, #1e3a8a 100%);
+        }
+        .safety-card-glow {
+            box-shadow: 0 20px 40px -15px rgba(30, 58, 138, 0.25);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- Top AppBar -->
+<header class="bg-surface/80 backdrop-blur-md flex justify-between items-center w-full px-margin-mobile h-16 fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</button>
+<span class="text-title-lg font-title-lg font-bold text-primary">SafeSpace</span>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed-dim">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up portrait of a friendly high school student with a confident smile, set against a blurred modern educational facility. The lighting is soft and natural, emphasizing a bright and welcoming atmosphere. The image uses a clean, high-key aesthetic with subtle corporate blue tones in the background to match the professional educational UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxi-Vp3JzyDNjiCHBM2fKACnIfKIh-uginqF8Em3E8YqCiDAS3jJ_YP1MeHfSPj7QW2BeKJNxUVk_WK9i0Fu8Dey4yEMJk-aPt2Yi_QTfmfqMiWCO-NBDCezCNc4m4mwrAAnlplBP6D4hO5o6FjoMDA_MqUwnFuEGxhbGQs8PqwQndqmUWcCcU879Sava-nM6VXgiuGb5Uku-cVBelSnlPGt2ntrTNBT6054B6WC60NcrMSngnVLvWUxy7O6Ue5jfyZveGmtsnz7U"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-margin-mobile max-w-lg mx-auto space-y-stack-lg">
+<!-- Greeting Section -->
+<section class="space-y-1">
+<h1 class="text-headline-md font-headline-md text-on-background">Hello, Adrian Thorne</h1>
+<p class="text-body-md text-on-surface-variant">Class 12-A • Binusa Academy</p>
+</section>
+<!-- Current Safety Score Card (Hero) -->
+<section class="bg-brand-gradient rounded-[24px] p-8 text-white relative overflow-hidden safety-card-glow">
+<!-- Decorative Elements -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+<div class="absolute bottom-0 left-0 w-24 h-24 bg-primary-fixed-dim/20 rounded-full -ml-12 -mb-12 blur-xl"></div>
+<div class="relative z-10 flex flex-col items-center text-center space-y-4">
+<span class="text-label-lg font-label-lg uppercase tracking-widest opacity-80">Current Safety Score</span>
+<div class="flex items-baseline gap-1">
+<span class="text-[64px] font-extrabold leading-none tracking-tighter">98</span>
+<span class="text-headline-md opacity-60">pts</span>
+</div>
+<div class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2"><div class="bg-green-500/20 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2 border border-green-400/30"><span class="material-symbols-outlined text-[18px] text-green-300" style="font-variation-settings: 'FILL' 1;">check_circle</span><span class="text-label-lg text-white font-bold">Aman (Safe)</span></div></div>
+<p class="text-body-md opacity-80 pt-2">You are in the top 5% of students this semester.</p>
+</div>
+</section><section class="bg-error-container/20 border border-error/20 p-4 rounded-[24px] flex items-center gap-4 animate-pulse"><div class="bg-error/10 p-3 rounded-2xl"><span class="material-symbols-outlined text-error">priority_high</span></div><div class="flex-1"><h4 class="text-label-lg font-bold text-error uppercase tracking-wider">Official Summons</h4><p class="text-body-md text-on-surface-variant font-medium">New 'Surat Panggilan' received</p></div><button class="bg-error text-on-error px-4 py-2 rounded-xl text-label-lg font-bold flex items-center gap-2 shadow-lg shadow-error/20 hover:scale-105 transition-transform"><span class="material-symbols-outlined text-sm">picture_as_pdf</span>View PDF</button></section>
+<!-- Feature Grid (2x2) -->
+<section class="grid grid-cols-2 gap-stack-md">
+<!-- History Log -->
+<button class="bg-surface-container-lowest p-card-padding rounded-[24px] shadow-[0_4px_20px_rgba(30,58,138,0.08)] flex flex-col items-start gap-4 hover:bg-surface-container-low transition-all active:scale-95 group text-left">
+<div class="p-3 rounded-2xl bg-primary/5 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+</div>
+<div>
+<h3 class="text-title-lg font-title-lg text-on-surface">History Log</h3>
+<p class="text-label-md text-on-surface-variant">Points history &amp; records</p>
+</div>
+</button>
+<!-- Inbox Messenger -->
+<button class="bg-surface-container-lowest p-card-padding rounded-[24px] shadow-[0_4px_20px_rgba(30,58,138,0.08)] flex flex-col items-start gap-4 hover:bg-surface-container-low transition-all active:scale-95 group text-left">
+<div class="relative">
+<div class="p-3 rounded-2xl bg-secondary/5 group-hover:bg-secondary/10 transition-colors">
+<span class="material-symbols-outlined text-secondary" data-icon="forum">forum</span>
+</div>
+<span class="absolute -top-1 -right-1 w-3 h-3 bg-error rounded-full border-2 border-surface-container-lowest"></span>
+</div>
+<div>
+<h3 class="text-title-lg font-title-lg text-on-surface">Inbox</h3>
+<p class="text-label-md text-on-surface-variant">Chat with Guru BK</p>
+</div>
+</button>
+<!-- Send Submission (Highlighted) -->
+<button class="bg-error-container p-card-padding rounded-[24px] shadow-[0_4px_20px_rgba(186,26,26,0.1)] flex flex-col items-start gap-4 hover:opacity-90 transition-all active:scale-95 group text-left col-span-1">
+<div class="p-3 rounded-2xl bg-error/10">
+<span class="material-symbols-outlined text-error" data-icon="campaign">campaign</span>
+</div>
+<div>
+<h3 class="text-title-lg font-title-lg text-on-error-container">New Report</h3>
+<p class="text-label-md text-on-error-container opacity-80">Submit safety concern</p>
+</div>
+</button>
+<!-- Help Center -->
+<button class="bg-surface-container-lowest p-card-padding rounded-[24px] shadow-[0_4px_20px_rgba(30,58,138,0.08)] flex flex-col items-start gap-4 hover:bg-surface-container-low transition-all active:scale-95 group text-left col-span-1">
+<div class="p-3 rounded-2xl bg-outline-variant/10 group-hover:bg-outline-variant/20 transition-colors">
+<span class="material-symbols-outlined text-outline" data-icon="help_center">help_center</span>
+</div>
+<div>
+<h3 class="text-title-lg font-title-lg text-on-surface">Help Center</h3>
+<p class="text-label-md text-on-surface-variant">Resources &amp; guides</p>
+</div>
+</button>
+</section>
+<!-- Counseling Recommendation (Asymmetric/Bento style) -->
+<section class="bg-white rounded-[24px] p-card-padding shadow-[0_4px_20px_rgba(30,58,138,0.08)] border border-primary/5">
+<div class="flex justify-between items-start mb-4">
+<div class="space-y-1">
+<h3 class="text-title-lg font-title-lg text-on-surface">Upcoming Appointment</h3>
+<p class="text-body-md text-on-surface-variant">Mental Wellness Check-in</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">Tomorrow</div>
+</div>
+<div class="flex items-center gap-4 p-3 bg-surface rounded-2xl">
+<img alt="Counselor" class="w-12 h-12 rounded-xl object-cover" data-alt="A portrait of a professional female school counselor with a kind, empathetic expression. She is wearing professional attire in a modern, brightly lit office with books and plants in the background. The lighting is soft and optimistic, maintaining the corporate modern aesthetic of the educational platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEeJnmylcHKVtMC_50A9gHGgIxqqtP8ryAQwGbhIz0V2rmAErSFTFDCvy7IQJLXa5mhb5ZSoq03C0oS4T2C_cX3REinjYIb0QfBVQtCZIEYcHKo9jVIyEEI_cMBp8WU9FLlM2rn73J7e3GYvCa1TM4DxBp5kYQZiYtGtoQ2c4ExSd0ZnxLhn2vVQocGyfnG845E6gw_74wNuJ5-CCL67kCsSAEA2-KTdFCScOaAAqvUAvM8rlRgCVUNHPFudfS-0GISBpYwjhl_6s"/>
+<div>
+<p class="text-label-lg font-bold">Ms. Sarah Jenkins</p>
+<p class="text-label-md text-on-surface-variant">10:30 AM • Room 402</p>
+</div>
+<button class="ml-auto text-primary p-2 hover:bg-primary/5 rounded-full transition-colors">
+<span class="material-symbols-outlined">event</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom NavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center pt-3 pb-6 px-4 shadow-[0_-4px_20px_rgba(30,58,138,0.08)] bg-surface z-50 rounded-t-3xl">
+<!-- Dashboard (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-5 py-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<!-- Counseling -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="text-label-md font-label-md">Counseling</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-md font-label-md">Profile</span>
+</a>
+</nav>
+</body></html>

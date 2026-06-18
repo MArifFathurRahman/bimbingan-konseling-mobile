@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduGuard - Counselor Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#90a8ff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "secondary-container": "#98a9fd",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-container": "#1e3a8a",
+                        "on-tertiary-container": "#f39461",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary-fixed-variant": "#264191",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "primary": "#00236f",
+                        "on-background": "#191c1e",
+                        "secondary": "#4759a7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-surface-variant": "#444651",
+                        "on-secondary-container": "#283b88",
+                        "tertiary-fixed": "#ffdbcb",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary": "#4b1c00",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-fixed": "#341100",
+                        "on-secondary-fixed-variant": "#2e408d",
+                        "secondary-fixed-dim": "#b8c3ff",
+                        "surface-container-low": "#f2f4f6",
+                        "surface": "#f7f9fb",
+                        "primary-fixed": "#dce1ff",
+                        "outline-variant": "#c5c5d3",
+                        "on-surface": "#191c1e",
+                        "surface-tint": "#4059aa",
+                        "outline": "#757682",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2d3133",
+                        "on-primary-fixed": "#00164e",
+                        "inverse-primary": "#b6c4ff",
+                        "tertiary-container": "#6e2c00",
+                        "surface-dim": "#d8dadc",
+                        "secondary-fixed": "#dde1ff",
+                        "on-secondary-fixed": "#001355"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "card-padding": "20px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["11px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f7f9fb;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface mb-24">
+<!-- TopAppBar Shell -->
+<header class="bg-surface dark:bg-on-background shadow-[0_4px_20px_rgba(30,58,138,0.08)] shadow-sm docked full-width top-0 flex justify-between items-center px-margin-mobile py-4 w-full z-40 sticky">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed-dim">EduGuard</h1>
+</div>
+<div class="hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform p-2 rounded-full cursor-pointer">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">account_circle</span>
+</div>
+</header>
+<main class="px-margin-mobile py-stack-lg max-w-4xl mx-auto space-y-stack-lg">
+<!-- Dashboard Header & Stats -->
+<section>
+<div class="mb-stack-md">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Counselor Workspace</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Ringkasan aktivitas kedisiplinan hari ini.</p>
+</div>
+<!-- Stats Bento Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="col-span-2 md:col-span-1 bg-surface-container-lowest p-card-padding rounded-[24px] shadow-[0_4px_20px_rgba(30,58,138,0.08)]">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-primary p-2 bg-primary-fixed rounded-lg">description</span>
+<span class="text-error font-bold text-label-md">+12%</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary">124</div>
+<div class="font-label-lg text-label-lg text-on-surface-variant">Total Laporan</div>
+</div>
+<div class="bg-surface-container-lowest p-card-padding rounded-[24px] shadow-[0_4px_20px_rgba(30,58,138,0.08)]">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-secondary p-2 bg-secondary-fixed rounded-lg">forum</span>
+</div>
+<div class="font-headline-md text-headline-md text-secondary">8</div>
+<div class="font-label-lg text-label-lg text-on-surface-variant">Pending Chats</div>
+</div>
+<div class="bg-surface-container-lowest p-card-padding rounded-[24px] shadow-[0_4px_20px_rgba(30,58,138,0.08)]">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-error p-2 bg-error-container rounded-lg">warning</span>
+</div>
+<div class="font-headline-md text-headline-md text-error">15</div>
+<div class="font-label-lg text-label-lg text-on-surface-variant">High-Risk Students</div>
+</div>
+</div>
+</section>
+<!-- Point Management Section -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-title-lg text-title-lg text-on-surface">Manajemen Poin</h3>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full font-label-lg flex items-center gap-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+                    Quick Add Points
+                </button>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-xl focus:border-primary focus:ring-0 transition-all font-body-md" placeholder="Cari nama siswa atau kelas..." type="text"/>
+</div>
+<!-- Student List -->
+<div class="space-y-3">
+<!-- Student Card 1 -->
+<div class="bg-surface-container-lowest p-card-padding rounded-[24px] shadow-[0_4px_20px_rgba(30,58,138,0.08)] flex items-center justify-between border-l-4 border-error">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A portrait of a male high school student in a neat Indonesian school uniform, shot in soft natural daylight against a blurred educational background. The lighting is clean and high-key, maintaining a professional and serious atmosphere. The overall visual style is corporate and modern, using a neutral color palette with hints of deep blue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAay5smtYkQRYM8-hXM9LouxXIfZ9GxjEp6c9P4yNyfm7l4OsTmTtIlbT4LvPUdTcQXcb2C6M8BcF9EBAnm3qKoOUCKiMm0d38s4gT3Buy3-VVY3jdC9GL6jiam2WXjlu8MC3qusGNsIFT-cbBJ7sya-uV8ks-QOgBvx8qoxius_zjqw5XSzb5FVp02XXjv8ayyQuJIuPYl_uPVMz8BgutHYPclp0Ly8D2uhtsY5iCK36iRtibxU-eHk4iQba0R6_vZkBaB5czU0E"/>
+<div>
+<p class="font-title-lg text-title-lg text-on-surface">Dimas Pratama</p>
+<p class="font-label-lg text-label-lg text-on-surface-variant">XII TKJ 1 • <span class="text-error font-bold">75 Poin</span></p>
+</div>
+</div>
+<button class="text-primary font-label-lg px-4 py-2 hover:bg-surface-container-high rounded-full transition-colors active:scale-95">View/Edit</button>
+</div>
+<!-- Student Card 2 -->
+<div class="bg-surface-container-lowest p-card-padding rounded-[24px] shadow-[0_4px_20px_rgba(30,58,138,0.08)] flex items-center justify-between border-l-4 border-primary">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A professional portrait of a female student in a white school uniform with a clean, blurred background of a modern school corridor. The aesthetic is bright and minimal, characterized by soft morning sunlight that emphasizes high-fidelity textures. The color profile is airy with deep blue accents, conveying a sense of discipline and empathy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQqRBzTpw2N7wTumFrKLoP08bGIy6np6LzlTaT6UdS87XzymFInf3pGLiD-iE2tWnsChuPMvS7jedDZCsqzBVPEbYSGbYBYM354YcIjYnbH8ZG8QKpqkYG86fmnQY7mTtYn0d5hCkh2rZwXxCOc4-rKRY9JSjdTuShr_qyL4-4FyqKt0KpaK3_e-bG3-m0DKyY2bHrigwQVtKlZNcun3b5fQWR4Wa9CZ1vUdu2o2Y8vdI05waJOLJo9qH-wKnEtWsk3vYlw6f0moo"/>
+<div>
+<p class="font-title-lg text-title-lg text-on-surface">Siti Aminah</p>
+<p class="font-label-lg text-label-lg text-on-surface-variant">XII RPL 2 • <span class="text-primary font-bold">10 Poin</span></p>
+</div>
+</div>
+<button class="text-primary font-label-lg px-4 py-2 hover:bg-surface-container-high rounded-full transition-colors active:scale-95">View/Edit</button>
+</div>
+<!-- Student Card 3 -->
+<div class="bg-surface-container-lowest p-card-padding rounded-[24px] shadow-[0_4px_20px_rgba(30,58,138,0.08)] flex items-center justify-between border-l-4 border-on-tertiary-container">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A close-up high-resolution portrait of a smiling young student in a professional school environment. The background features clean architectural lines of a library with soft blue and white tones. The lighting is diffused and professional, creating a trustworthy and stable atmosphere appropriate for a corporate modern educational application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByJdy1O7rF0bfscikvBrtc8IpErk15hQtbu5HBMLz1WW8Hx2H_FskuzTV-l7L6YOCsXGqg0Ka1Yk775xtIkfDPsCZf4gnAB03HMTwYzO_o0UAlV3gm-rE4J3KaTlbfiAS6WDmO9lkanLVgfuv2zmnxit9VoP2n1MR7jJUtjDTAA0nQvV4LsHXeHpfYDmNuRN--HOkSEGGrdAwNzbHhS9oY-B1baolt8CywgicIBbcgNTrqpuoyDgsDf-NUSrqB3aLuK7xERvkPlBc"/>
+<div>
+<p class="font-title-lg text-title-lg text-on-surface">Budi Santoso</p>
+<p class="font-label-lg text-label-lg text-on-surface-variant">XI Multimedia 1 • <span class="text-on-tertiary-container font-bold">35 Poin</span></p>
+</div>
+</div>
+<button class="text-primary font-label-lg px-4 py-2 hover:bg-surface-container-high rounded-full transition-colors active:scale-95">View/Edit</button>
+</div>
+</div>
+</section>
+<!-- Official Actions Section (Surat Panggilan) -->
+<section class="bg-primary-container text-on-primary-container p-card-padding rounded-[24px] shadow-lg overflow-hidden relative">
+<div class="absolute right-0 top-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[120px]">mark_email_unread</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md font-bold mb-2">Surat Panggilan</h3>
+<p class="font-body-md text-body-md opacity-90 mb-6 max-w-[280px]">Terbitkan surat panggilan resmi (SP) secara digital untuk orang tua siswa.</p>
+<div class="space-y-4">
+<div class="bg-surface/10 p-4 rounded-xl border border-on-primary-container/20">
+<label class="block font-label-lg mb-2">Pilih Siswa Terkait</label>
+<select class="w-full bg-transparent border-b border-on-primary-container/40 focus:border-on-primary-container outline-none py-2 font-body-md text-on-primary-container">
+<option class="bg-primary-container">Dimas Pratama - XII TKJ 1 (75 Poin)</option>
+<option class="bg-primary-container">Siti Aminah - XII RPL 2 (10 Poin)</option>
+<option class="bg-primary-container">Budi Santoso - XI Multimedia 1 (35 Poin)</option>
+</select>
+</div>
+<button class="w-full bg-white text-primary font-bold py-4 rounded-xl flex items-center justify-center gap-3 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+                        Generate PDF Summons
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-surface-container-lowest dark:bg-surface-dim shadow-[0_-4px_20px_rgba(30,58,138,0.08)] shadow-lg rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-6 py-1 hover:bg-surface-container-high transition-all active:scale-90">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-lg text-label-lg mt-1">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-6 py-1 transition-all active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-label-lg text-label-lg mt-1">Counseling</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-6 py-1 hover:bg-surface-container-high transition-all active:scale-90">
+<span class="material-symbols-outlined">assignment_late</span>
+<span class="font-label-lg text-label-lg mt-1">Reports</span>
+</div>
+</nav>
+</body></html>

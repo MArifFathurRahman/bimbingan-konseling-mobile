@@ -1,0 +1,39 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "safespace-app-c6bfd",
+          "appId": "1:534736508777:android:a28074e8b2e5cd71b1cff8",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "safespace-app-c6bfd",
+          "configurations": {
+            "android": "1:534736508777:android:a28074e8b2e5cd71b1cff8",
+            "ios": "1:534736508777:ios:8b8ddfbbd4a7b526b1cff8",
+            "macos": "1:534736508777:ios:8b8ddfbbd4a7b526b1cff8",
+            "web": "1:534736508777:web:5e987d8711c17336b1cff8",
+            "windows": "1:534736508777:web:43cd0b94630a2e7cb1cff8"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "disallowLegacyRuntimeConfig": true,
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ]
+    }
+  ]
+}
